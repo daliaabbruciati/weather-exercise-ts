@@ -1,6 +1,6 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import favouriteCitySlice from "../reducers/favourite-city-slice";
 import cityListSlice from "../reducers/city-list-slice";
+import favouriteCitySlice from "../reducers/favourite-city-slice";
+import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 
 export const store = configureStore({
   reducer: {

@@ -1,15 +1,14 @@
-import React from 'react'
-import cities from '../../data/cities.json'
 import './city-list.css'
 import FavouriteCity from "../favourite-city";
-import {useDispatch, useSelector} from "react-redux";
-import {addCity, openTab} from "../../reducers/city-list-slice";
+import React from 'react'
+import cities from '../../data/cities.json'
 import {RootState} from "../../app/store";
+import {addCity, openTab} from "../../reducers/city-list-slice";
+import {useDispatch, useSelector} from "react-redux";
 
 const CityList = () => {
   const dispatch = useDispatch()
   const showList = useSelector((state: RootState) => state.cityList.open)
-  const cityName = useSelector((state: RootState) => state.cityList.cityName)
 
    return (
     <div className="container">
@@ -22,7 +21,9 @@ const CityList = () => {
           {cities.map(city => {
             return (
               <div className="container-city__list__city" key={city._id}>
-                <button className="container-city__list__bottom" onClick={() => dispatch(addCity({value: city.name}))}>
+                <button
+                  className="container-city__list__bottom"
+                  onClick={() => dispatch(addCity({value: city.name}))}>
                   {city.name}
                 </button>
               </div>
@@ -30,7 +31,7 @@ const CityList = () => {
             })}
         </div>
       )}
-      {cityName && <FavouriteCity />}
+      <FavouriteCity />
     </div>
   )
 }

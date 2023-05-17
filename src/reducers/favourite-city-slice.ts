@@ -7,35 +7,41 @@ type city = {
 interface InitialStateType {
 	selectedCity: object[],
 	loading: boolean
-	error: string
+	error: string | null
 }
 
 const initialState: InitialStateType = {
 	selectedCity: [],
-	loading: true,
-	error: ''
+	loading: false,
+	error: null
 }
 
-const cityListSlice = createSlice({
+//TODO: aggiungere localstore
+
+const favouriteCitySlice = createSlice({
 	name: 'favourite-city',
 	initialState,
 	reducers: {
-		updateData: (state, action) => {
-			state.selectedCity.push(action.payload.value)
-			state.loading = false
+		getData: (state, action) => {
+			const itemIndex = state.selectedCity.findIndex((item: city) => item.name === action.payload.name)
+			if(itemIndex >= 0){
+				state.selectedCity[itemIndex] = action.payload
+			}else {
+				state.selectedCity.push(action.payload)
+			}
 		},
 		removeCity: (state, action) => {
 			state.selectedCity = state.selectedCity.filter((removed: city) => removed.name !== action.payload.value)
 		},
-		refreshData: (state, action) => {
-
-		},
 		showError: (state, action) => {
-			state.error = action.payload.value
-			state.loading = false
+			state.loading = initialState.loading
+			state.error = action.payload
 		},
+		setLoading: (state, action) => {
+			state.loading = action.payload
+		}
 	},
 })
 
-export const {  removeCity, showError, updateData } = cityListSlice.actions
-export default cityListSlice.reducer
+export const {  removeCity, setLoading, showError, getData } = favouriteCitySlice.actions
+export default favouriteCitySlice.reducer
