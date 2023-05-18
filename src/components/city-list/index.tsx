@@ -12,10 +12,10 @@ const CityList = () => {
 
    return (
     <div className="container">
-      <div className="container-city">
+      <button className="container-city" onClick={() => dispatch(openTab())}>
         <p>Add a city...</p>
-        <button onClick={() => dispatch(openTab())}>+</button>
-      </div>
+        <p>+</p>
+      </button>
       {showList && (
         <div className="container-city__list">
           {cities.map(city => {
@@ -23,7 +23,7 @@ const CityList = () => {
               <div className="container-city__list__city" key={city._id}>
                 <button
                   className="container-city__list__bottom"
-                  onClick={() => dispatch(addCity({value: city.name}))}>
+                  onClick={() => dispatch(addCity(city.name))}>
                   {city.name}
                 </button>
               </div>

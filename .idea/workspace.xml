@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f45c0bb4-096d-491c-89f3-7ce043028b5d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/city-list/city-list.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/city-list/city-list.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/city-list/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/city-list/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/favourite-city/favourite-city.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/favourite-city/favourite-city.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/favourite-city/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/favourite-city/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/city-list-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/city-list-slice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/favourite-city-slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/favourite-city-slice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,14 +37,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitRewordedCommitMessages">
-    <option name="commitMessagesMapping">
-      <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="Add weather icon" />
-        <option name="rewordedMessage" value="Add weather info" />
-      </RewordedCommitMessageMapping>
-    </option>
-    <option name="currentCommit" value="1" />
-    <option name="onto" value="732125b681b0dceca57af6e91dec9e2a44fb5783" />
+    <option name="onto" value="f754a3009bb62e10888ab6e657f142affb65ad83" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -91,7 +88,8 @@
       <workItem from="1683880022107" duration="16000" />
       <workItem from="1683882617778" duration="10173000" />
       <workItem from="1683974142035" duration="2229000" />
-      <workItem from="1684138948236" duration="56630000" />
+      <workItem from="1684138948236" duration="56724000" />
+      <workItem from="1684395743782" duration="7112000" />
     </task>
     <servers />
   </component>

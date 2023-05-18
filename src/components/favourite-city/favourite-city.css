@@ -1,12 +1,9 @@
 .container-favourite {
-    padding: 20px;
-}
-
-.container-favourite-city {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
 .favourite-city {

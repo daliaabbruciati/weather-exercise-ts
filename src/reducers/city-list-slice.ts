@@ -15,13 +15,12 @@ const cityListSlice = createSlice({
 	initialState,
 	reducers: {
 		addCity: (state, action) => {
-			state.cityName = action.payload.value
+			state.cityName = action.payload
 			state.open = false
 		},
 		openTab: state => {
 			state.open = !state.open
 			state.cityName = initialState.cityName
-
 		}
 	}
 })

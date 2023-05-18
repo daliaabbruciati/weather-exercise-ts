@@ -3,7 +3,7 @@ import React, {useEffect} from 'react'
 import axios from "axios";
 import {OW_APIKEY, OW_BASEURL} from "../../data/config";
 import {RootState} from "../../app/store";
-import {showError, removeCity, getData, setLoading} from "../../reducers/favourite-city-slice";
+import {showError, removeCity, getData, setLoading, setData} from "../../reducers/favourite-city-slice";
 import {useDispatch, useSelector} from "react-redux";
 
 type city = {
@@ -12,6 +12,7 @@ type city = {
 
 const FavouriteCity = () => {
 	const dispatch = useDispatch()
+	const getStorageData = JSON.parse(localStorage.getItem('favourite-cities') as string)
 	const cityName = useSelector((state: RootState) => state.cityList.cityName)
 	const selectedData: city[] = useSelector((state: RootState) => state.favouriteCity.selectedCity)
 	const loading = useSelector((state: RootState) => state.favouriteCity.loading)
@@ -19,7 +20,7 @@ const FavouriteCity = () => {
 
 	const getCity = async (cityName: string, override?: boolean) => {
 		dispatch(setLoading(true))
-		if(override || selectedData?.findIndex(item => item?.name === cityName) < 0){
+		if(override || !selectedData?.includes((item: city) => item?.name === cityName)){
 			axios.get(`${OW_BASEURL}/weather?q=${cityName}&appid=${OW_APIKEY}`)
 			.then( ( res)=> {
 				const data = res.data
@@ -36,6 +37,9 @@ const FavouriteCity = () => {
 		if (cityName?.length > 0) getCity(cityName)
 	}, [cityName]);
 
+	useEffect(() => {
+		dispatch(setData(getStorageData))
+	}, []);
 
   return (
     <div className="container-favourite">
@@ -59,7 +63,7 @@ const FavouriteCity = () => {
 								refresh
 							</button>
 							<button
-								onClick={() => dispatch(removeCity({value: city.name}))}
+								onClick={() => dispatch(removeCity(city.name))}
 							>
 								X
 							</button>

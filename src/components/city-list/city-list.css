@@ -13,8 +13,10 @@
     padding: 10px;
     gap: 20px;
     width: 450px;
-    height: 30px;
+    height: 50px;
     border: 0.5px solid gray;
+    background: transparent;
+    cursor: pointer;
 }
 
 .container-city__list {
@@ -29,7 +31,7 @@
 .container-city__list__city {
     width: 100%;
     border-bottom: 0.5px solid gray;
-    padding: 5px 10px;
+    padding: 5px 0;
 }
 
 .container-city__list__bottom {

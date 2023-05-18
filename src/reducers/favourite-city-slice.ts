@@ -16,8 +16,6 @@ const initialState: InitialStateType = {
 	error: null
 }
 
-//TODO: aggiungere localstore
-
 const favouriteCitySlice = createSlice({
 	name: 'favourite-city',
 	initialState,
@@ -28,10 +26,12 @@ const favouriteCitySlice = createSlice({
 				state.selectedCity[itemIndex] = action.payload
 			}else {
 				state.selectedCity.push(action.payload)
+				localStorage.setItem('favourite-cities', JSON.stringify(state.selectedCity))
 			}
 		},
 		removeCity: (state, action) => {
-			state.selectedCity = state.selectedCity.filter((removed: city) => removed.name !== action.payload.value)
+			state.selectedCity = state.selectedCity.filter((removed: city) => removed.name !== action.payload)
+			localStorage.setItem('favourite-cities', JSON.stringify(state.selectedCity))
 		},
 		showError: (state, action) => {
 			state.loading = initialState.loading
@@ -39,9 +39,12 @@ const favouriteCitySlice = createSlice({
 		},
 		setLoading: (state, action) => {
 			state.loading = action.payload
+		},
+		setData: (state, action) => {
+			state.selectedCity = action.payload
 		}
 	},
 })
 
-export const {  removeCity, setLoading, showError, getData } = favouriteCitySlice.actions
+export const {  getData, removeCity, showError, setLoading, setData } = favouriteCitySlice.actions
 export default favouriteCitySlice.reducer
