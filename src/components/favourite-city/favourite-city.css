@@ -1,0 +1,33 @@
+.container-favourite {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.favourite-city {
+    display: flex;
+    width: 450px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.5px solid darkgrey;
+}
+
+.favourite-city__weather {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.favourite-city__icon {
+    width: 50px;
+}
+
+.favourite-city__actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
