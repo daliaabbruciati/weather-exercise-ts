@@ -1,10 +1,10 @@
 import './favourite-city.css'
-import React, {useEffect} from 'react'
-import axios from "axios";
-import {OW_APIKEY, OW_BASEURL} from "../../data/config";
-import {RootState} from "../../app/store";
-import {showError, removeCity, getData, setLoading, setData} from "../../reducers/favourite-city-slice";
-import {useDispatch, useSelector} from "react-redux";
+import React, { useEffect } from 'react'
+import axios from 'axios';
+import { OW_APIKEY, OW_BASEURL } from '../../data/config';
+import { RootState } from '../../app/store';
+import { showError, removeCity, getData, setLoading, setData } from '../../reducers/favourite-city-slice';
+import { useDispatch, useSelector } from 'react-redux';
 
 type city = {
 	[key: string]: any
@@ -42,21 +42,21 @@ const FavouriteCity = () => {
 	}, []);
 
   return (
-    <div className="container-favourite">
+    <div className='container-favourite'>
 			<h3>Favourite cities</h3>
-			<div className="container-favourite-city">
+			<div className='container-favourite-city'>
 			{selectedData?.map( (city) => {
 				return (
-					<div className="favourite-city" key={city.name}>
-						<div className="favourite-city__weather">
+					<div className='favourite-city' key={city.name}>
+						<div className='favourite-city__weather'>
 							<p>{city.name}</p>
 							<img
-								className="favourite-city__icon"
+								className='favourite-city__icon'
 								alt='weather-icon'
 								src={`https://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png`}/>
 							<p>{city.weather[0].description}</p>
 						</div>
-						<div className="favourite-city__actions">
+						<div className='favourite-city__actions'>
 							<button
 								onClick={() => getCity(city.name, true)}
 							>

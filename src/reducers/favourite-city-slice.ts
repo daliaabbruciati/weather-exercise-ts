@@ -1,19 +1,19 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 type city = {
 	[key: string]: any
 }
 
 interface InitialStateType {
-	selectedCity: object[],
-	loading: boolean
 	error: string | null
+	loading: boolean
+	selectedCity: object[],
 }
 
 const initialState: InitialStateType = {
-	selectedCity: [],
+	error: null,
 	loading: false,
-	error: null
+	selectedCity: [],
 }
 
 const favouriteCitySlice = createSlice({
