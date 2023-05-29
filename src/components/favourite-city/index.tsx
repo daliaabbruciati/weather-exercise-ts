@@ -12,7 +12,7 @@ type city = {
 
 const FavouriteCity = () => {
 	const dispatch = useDispatch()
-	const getStorageData = JSON.parse(localStorage.getItem('favourite-cities') as string)
+	// const getStorageData = JSON.parse(localStorage.getItem('favourite-cities') as string)
 	const cityName = useSelector((state: RootState) => state.cityList.cityName)
 	const selectedData: city[] = useSelector((state: RootState) => state.favouriteCity.selectedCity)
 	const loading = useSelector((state: RootState) => state.favouriteCity.loading)
@@ -38,7 +38,7 @@ const FavouriteCity = () => {
 	}, [cityName]);
 
 	useEffect(() => {
-		dispatch(setData(getStorageData))
+		dispatch(setData(selectedData))
 	}, []);
 
   return (

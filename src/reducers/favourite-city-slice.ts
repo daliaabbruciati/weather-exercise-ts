@@ -26,12 +26,12 @@ const favouriteCitySlice = createSlice({
 				state.selectedCity[itemIndex] = action.payload
 			}else {
 				state.selectedCity.push(action.payload)
-				localStorage.setItem('favourite-cities', JSON.stringify(state.selectedCity))
+				// localStorage.setItem('favourite-cities', JSON.stringify(state.selectedCity))
 			}
 		},
 		removeCity: (state, action) => {
 			state.selectedCity = state.selectedCity.filter((removed: city) => removed.name !== action.payload)
-			localStorage.setItem('favourite-cities', JSON.stringify(state.selectedCity))
+			// localStorage.setItem('favourite-cities', JSON.stringify(state.selectedCity))
 		},
 		showError: (state, action) => {
 			state.loading = initialState.loading

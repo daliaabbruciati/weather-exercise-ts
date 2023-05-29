@@ -1,10 +1,10 @@
 import './city-list.css'
-import FavouriteCity from "../favourite-city";
+import FavouriteCity from '../favourite-city';
 import React from 'react'
 import cities from '../../data/cities.json'
-import {RootState} from "../../app/store";
-import {addCity, openTab} from "../../reducers/city-list-slice";
-import {useDispatch, useSelector} from "react-redux";
+import {RootState} from '../../app/store';
+import {addCity, openTab} from '../../reducers/city-list-slice';
+import {useDispatch, useSelector} from 'react-redux';
 
 const CityList = () => {
   const dispatch = useDispatch()
