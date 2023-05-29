@@ -1,19 +1,19 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 type city = {
 	[key: string]: any
 }
 
 interface InitialStateType {
-	selectedCity: object[],
-	loading: boolean
 	error: string | null
+	loading: boolean
+	selectedCity: object[],
 }
 
 const initialState: InitialStateType = {
-	selectedCity: [],
+	error: null,
 	loading: false,
-	error: null
+	selectedCity: [],
 }
 
 const favouriteCitySlice = createSlice({
@@ -26,12 +26,12 @@ const favouriteCitySlice = createSlice({
 				state.selectedCity[itemIndex] = action.payload
 			}else {
 				state.selectedCity.push(action.payload)
-				localStorage.setItem('favourite-cities', JSON.stringify(state.selectedCity))
+				// localStorage.setItem('favourite-cities', JSON.stringify(state.selectedCity))
 			}
 		},
 		removeCity: (state, action) => {
 			state.selectedCity = state.selectedCity.filter((removed: city) => removed.name !== action.payload)
-			localStorage.setItem('favourite-cities', JSON.stringify(state.selectedCity))
+			// localStorage.setItem('favourite-cities', JSON.stringify(state.selectedCity))
 		},
 		showError: (state, action) => {
 			state.loading = initialState.loading
